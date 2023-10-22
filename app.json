@@ -1,6 +1,8 @@
 {
   "expo": {
     "name": "pasahero",
+    "entrypoint": "",
+    "owner": "crrmacarse.github.io",
     "slug": "pasahero",
     "version": "1.0.0",
     "orientation": "portrait",
