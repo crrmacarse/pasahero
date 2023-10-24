@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import MapScreen from './src/screens/map';
+import RouteScreen from './src/screens/route';
+import { SCREENS } from './src/constants/config';
+import HomeScreen from './src/screens/home';
+import NavigationHeader from './src/components/navigation-header';
+import NavigationTitle from './src/components/navigation-title';
+import AboutScreen from './src/screens/about';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const Stack = createNativeStackNavigator();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App = () => (
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName={SCREENS.HOME} screenOptions={{
+      headerStyle: {
+        backgroundColor: '#052673',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+      headerTitle: () => <NavigationTitle />,
+      headerRight: () => <NavigationHeader />
+    }}>
+      <Stack.Screen name={SCREENS.HOME} component={HomeScreen} />
+      <Stack.Screen name={SCREENS.ROUTE} component={RouteScreen} />
+      <Stack.Screen name={SCREENS.MAP} component={MapScreen} />
+      <Stack.Screen name={SCREENS.ABOUT} component={AboutScreen} />
+    </Stack.Navigator>
+  </NavigationContainer>
+)
+
+export default App;
