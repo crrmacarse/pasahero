@@ -3,7 +3,7 @@
 An interactive commuter app for Ilonggos by an Ilonggo. This aims to support LPTRP implementation of Iloilo and encourage
 the masses to utilize public transportation. Lets prevent Iloilo becoming a car-centric city today!
 
-> Inspired by Commute Davao(https://commutedavao.com/)
+> Inspired by SakayPH(https://sakay.ph) and Commute Davao(https://commutedavao.com)
 
 ## MVP
 
